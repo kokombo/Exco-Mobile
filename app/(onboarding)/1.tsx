@@ -2,13 +2,15 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { StyleSheet } from "react-native";
 
-export default function HomeScreen() {
+const OnboardingScreen1 = () => {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText>Index</ThemedText>
+      <ThemedText>OnboardingScreen1</ThemedText>
     </ThemedView>
   );
-}
+};
+
+export default OnboardingScreen1;
 
 const styles = StyleSheet.create({
   container: {

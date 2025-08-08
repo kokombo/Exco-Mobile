@@ -2,13 +2,15 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { StyleSheet } from "react-native";
 
-export default function HomeScreen() {
+const GamesTabScreen = () => {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText>Index</ThemedText>
+      <ThemedText>GamesTabScreen</ThemedText>
     </ThemedView>
   );
-}
+};
+
+export default GamesTabScreen;
 
 const styles = StyleSheet.create({
   container: {
