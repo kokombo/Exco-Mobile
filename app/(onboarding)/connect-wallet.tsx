@@ -1,11 +1,25 @@
 import ThemedPressable from "@/components/ThemedPressable";
+import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 
 const ConnectWallet = () => {
   return (
     <ThemedView style={styles.container}>
+      <View>
+        <ThemedText type="title">Connect your Primary Wallet</ThemedText>
+
+        <View>
+          {["phantom", "sollet", "slope", "solflare"].map((item, index) => (
+            <View key={item}>
+              <TextInput style={styles.input} />
+              <ThemedText>{item}</ThemedText>
+            </View>
+          ))}
+        </View>
+      </View>
+
       <View style={styles.buttonWrapper}>
         <ThemedPressable onPress={() => {}}>Continue</ThemedPressable>
 
@@ -22,7 +36,8 @@ export default ConnectWallet;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
+    paddingTop: 84,
     paddingBottom: 104,
     paddingHorizontal: 16,
   },
@@ -30,4 +45,6 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     gap: 16,
   },
+
+  input: {},
 });

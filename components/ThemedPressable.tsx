@@ -39,6 +39,9 @@ const ThemedPressable = ({
         : variant === "dark"
         ? "#000000"
         : "",
+    borderWidth: variant === "outlined" ? 1 : 0,
+    borderColor:
+      variant === "outlined" ? Colors[colorScheme ?? "light"].tint : "",
   };
 
   const defaultButtonLabelStyle: TextStyleType = {
