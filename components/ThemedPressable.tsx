@@ -18,6 +18,7 @@ export type ThemedPressableProps = {
   onPress: () => void;
   style?: PressableStyleType;
   variant?: "default" | "outlined" | "dark";
+  type?: "button" | "link";
   icon?: IconSymbolName;
   children: React.ReactNode;
 };

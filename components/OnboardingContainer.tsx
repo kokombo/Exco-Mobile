@@ -1,13 +1,18 @@
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Image, StyleSheet, View } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  View,
+  type ImageSourcePropType,
+} from "react-native";
 import ThemedPressable from "./ThemedPressable";
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
 import { IconSymbol } from "./ui/IconSymbol";
 
 type OnboardingContainerProps = {
-  image: string;
+  image: ImageSourcePropType;
   number: number;
   title: string;
   description: string;
@@ -27,7 +32,7 @@ const OnboardingContainer = ({
 
   return (
     <ThemedView style={styles.container}>
-      <Image src={image} style={styles.image} />
+      <Image source={image} style={styles.image} />
 
       <View style={styles.step}>
         {[...Array(3)].map((_, index) => (
@@ -60,15 +65,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "space-between",
-    paddingBottom: 24,
+    alignItems: "center",
+    justifyContent: "space-around",
+    paddingTop: 72,
+    paddingBottom: 50,
     paddingHorizontal: 16,
   },
 
   image: {
     height: 335,
-    width: 343,
-    maxWidth: "100%",
+    width: "100%",
   },
 
   step: {
@@ -78,7 +84,9 @@ const styles = StyleSheet.create({
     gap: 8,
   },
 
-  textContainer: {},
+  textContainer: {
+    gap: 16,
+  },
 
   title: {},
 

@@ -1,21 +1,18 @@
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { StyleSheet } from "react-native";
-
+import OnboardingContainer from "@/components/OnboardingContainer";
+import { images } from "@/constants/Images";
+import { useRouter } from "expo-router";
 const OnboardingScreen3 = () => {
+  const router = useRouter();
   return (
-    <ThemedView style={styles.container}>
-      <ThemedText>OnboardingScreen3</ThemedText>
-    </ThemedView>
+    <OnboardingContainer
+      title="Games on Exco earn you Solana coins"
+      description="You will need to play games in order to earn more Solana Coins to progress in the game"
+      buttonLabel="Gt Started"
+      onPress={() => router.push("/(onboarding)/signin")}
+      number={3}
+      image={images.onboarding3image}
+    />
   );
 };
 
 export default OnboardingScreen3;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
