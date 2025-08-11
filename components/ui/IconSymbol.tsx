@@ -26,6 +26,7 @@ const MAPPING = {
   "wallet.bifold": "wallet",
   "menucard.fill": "menu",
   "circle.fill": "circle",
+  "apple.logo": "apple",
 } as IconMapping;
 
 /**

@@ -51,7 +51,7 @@ const OnboardingContainer = ({
 
       <View style={styles.textContainer}>
         <ThemedText type="title">{title}</ThemedText>
-        <ThemedText type="subtitle">{description}</ThemedText>
+        <ThemedText>{description}</ThemedText>
       </View>
 
       <ThemedPressable onPress={onPress}>{buttonLabel}</ThemedPressable>
@@ -73,8 +73,9 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    height: 335,
+    height: "50%",
     width: "100%",
+    borderRadius: 16,
   },
 
   step: {

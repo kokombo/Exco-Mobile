@@ -57,7 +57,7 @@ const ThemedPressable = ({
     >
       {icon && (
         <IconSymbol
-          size={16}
+          size={24}
           name={icon}
           color={
             variant === "default"
@@ -80,6 +80,8 @@ const styles = StyleSheet.create({
   button: {
     paddingVertical: 16.5,
     width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
     alignItems: "center",
     height: 48,
     borderRadius: 8,

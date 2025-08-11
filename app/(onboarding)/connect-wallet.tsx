@@ -1,30 +1,23 @@
 import ThemedPressable from "@/components/ThemedPressable";
 import { ThemedView } from "@/components/ThemedView";
-import { useRouter } from "expo-router";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-const Signin = () => {
-  const router = useRouter();
-
+const ConnectWallet = () => {
   return (
     <ThemedView style={styles.container}>
       <View style={styles.buttonWrapper}>
-        <ThemedPressable
-          onPress={() => router.push("/(onboarding)/connect-wallet")}
-        >
-          Connect Solana Wallet
-        </ThemedPressable>
+        <ThemedPressable onPress={() => {}}>Continue</ThemedPressable>
 
-        <ThemedPressable variant="dark" icon="apple.logo" onPress={() => {}}>
-          Sign up with Apple
+        <ThemedPressable variant="outlined" onPress={() => {}}>
+          I don&apos;t have a wallet
         </ThemedPressable>
       </View>
     </ThemedView>
   );
 };
 
-export default Signin;
+export default ConnectWallet;
 
 const styles = StyleSheet.create({
   container: {
