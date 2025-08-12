@@ -1,19 +1,21 @@
 import ThemedPressable from "@/components/ThemedPressable";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import { useRouter } from "expo-router";
 import React from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 const ConnectWallet = () => {
+  const router = useRouter();
   return (
     <ThemedView style={styles.container}>
-      <View>
+      <View style={styles.form}>
         <ThemedText type="title">Connect your Primary Wallet</ThemedText>
 
-        <View>
-          {["phantom", "sollet", "slope", "solflare"].map((item, index) => (
-            <View key={item}>
-              <TextInput style={styles.input} />
+        <View style={styles.inputsWrapper}>
+          {["Phantom", "Sollet", "Slope", "Solflare"].map((item, index) => (
+            <View key={index} style={styles.field}>
+              <TouchableOpacity style={styles.input} />
               <ThemedText>{item}</ThemedText>
             </View>
           ))}
@@ -21,7 +23,9 @@ const ConnectWallet = () => {
       </View>
 
       <View style={styles.buttonWrapper}>
-        <ThemedPressable onPress={() => {}}>Continue</ThemedPressable>
+        <ThemedPressable onPress={() => router.push("/(tabs)/explore")}>
+          Continue
+        </ThemedPressable>
 
         <ThemedPressable variant="outlined" onPress={() => {}}>
           I don&apos;t have a wallet
@@ -46,5 +50,25 @@ const styles = StyleSheet.create({
     gap: 16,
   },
 
-  input: {},
+  form: {
+    gap: 64,
+  },
+
+  inputsWrapper: {
+    gap: 24,
+  },
+
+  input: {
+    height: 24,
+    width: 24,
+    backgroundColor: "white",
+    borderRadius: 8,
+    borderWidth: 2,
+  },
+
+  field: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+  },
 });
